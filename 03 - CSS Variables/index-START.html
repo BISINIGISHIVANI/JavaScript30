@@ -21,7 +21,20 @@
   <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
 
   <style>
-
+:root{
+      --base:#ffc600;
+      --spacing:10px;
+      --blur:10px;
+    }
+    img{
+      filter: blur(var(--blur));
+      padding: var(--spacing);
+      background-color: var(--base);
+    }
+    .h1,span{
+      color:var(--base);
+     
+    }
     /*
       misc styles, nothing to do with CSS variables
     */
@@ -43,8 +56,10 @@
       width: 100px;
     }
   </style>
-
+  
   <script>
+
+
   </script>
 
 </body>
