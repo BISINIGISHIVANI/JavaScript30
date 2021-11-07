@@ -122,9 +122,11 @@
   <script>
     const outputItem=document.querySelectorAll(".panel");
     function changeAppearance(){
-      outputItem.classList.toggle()
+      console.log("hello");
+     this.classList.toggle('open');
     }
-panel.forEach(panel=>panel.addEventListner("click",changeAppearanc));
+    outputItem.forEach(panel => panel.addEventListner("click",changeAppearance));
+//  panels.forEach("click",function(){console.log("clicked");})
  
   </script>
 
