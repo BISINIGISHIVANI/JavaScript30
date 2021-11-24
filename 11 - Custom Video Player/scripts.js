@@ -17,9 +17,14 @@ function updateButton(){
     const icon=this.paused ? '►' : '❚ ❚';
     toggle.textContent=icon;
 }
-function updateScreen(){
-    toggle.textContent=this.fullScreen ? '💢':'✅';
+function toggleScreenPlay(){
+    if(video.fullscreenchange){
+        video.exitFullscreen();
+    }else{
+        video.requestFullscreen();
+    }
 }
+
 function skip(){
     console.log(this.dataset.skip);
     video.currentTime +=parseFloat(this.dataset.skip);
@@ -41,6 +46,7 @@ video.addEventListener('play',updateButton);
 video.addEventListener('pause',updateButton);
 video.addEventListener('timeupdate',handleProgress);
 toggle.addEventListener('click',togglePlay);
+fullScreen.addEventListener('click',toggleScreenPlay);
 skipButtons.forEach(button=>button.addEventListener('click',skip));
 ranges.forEach(range=>range.addEventListener('change',handleRangeUpdate));
 progress.addEventListener('click',scrub);
@@ -48,5 +54,5 @@ let mousedown=false;
 progress.addEventListener('mousemove',(e)=>mousedown&&scrub(e));
 progress.addEventListener('mousedown',()=>mousedown=true);
 progress.addEventListener('mouseup',()=>mousedown=false);
-video.addEventListener('fullscreen',updateScreen);
+
 
