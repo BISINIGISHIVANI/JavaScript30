@@ -57,10 +57,10 @@
         if (callNow) func.apply(context, args);
       };
     };
-var sliderImages=document.querySelectorAll('.slide-in');
-function checkSlide(e){
-  console.log('hi');
-  sliderImages.forEach(sliderImage=>{
+    var sliderImages=document.querySelectorAll('.slide-in');
+    function checkSlide(e){
+    console.log('hi');
+    sliderImages.forEach(sliderImage=>{
     const sideInAt=(window.scrollY+window.innerHeight)-sliderImage/2;
     const imageBottom=sliderImage.offsetTop+sliderImage.height;
     const isHalfShown=sideInAt>sliderImage.offsetTop;
@@ -72,8 +72,8 @@ function checkSlide(e){
       }  
     }
   )};
-window.addEventListener('scroll',debounce(checkSlide));
-window.addEventListener('click',checkSlide);
+  window.addEventListener('scroll',debounce(checkSlide));
+// window.addEventListener('click',checkSlide);
   </script>
 
   <style>
